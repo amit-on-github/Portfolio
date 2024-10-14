@@ -13,11 +13,18 @@ function Home() {
       <div
         name="Home"
         className="max-w-screen-2xl container mx-auto px-4 md:px-20 my-28"
-        style={{
-          backgroundImage: "url('.jpg')", // Background image
-          backgroundSize: "cover",
-          backgroundPosition: "center",
-        }}
+      style={{
+        backgroundImage: "url('./b.jpg')", // Replace with your image URL
+        backgroundSize: "cover",
+        backgroundPosition: "center",
+        backgroundRepeat: "no-repeat",
+        minHeight: "100vh",
+        display: "flex",
+        justifyContent: "center",
+        alignItems: "center",
+        textAlign: "center",
+        color: "#fff",
+      }}
       >
         <div className="flex flex-col md:flex-row items-center">
           <div className="md:w-1/2 mt-12 md:mt-24 space-y-4 order-2 md:order-1">
