@@ -1,4 +1,4 @@
-Under Construction 
+Welcome to my Portfolio...
 
 👉 [visit website](https://clickmyportfolio.netlify.app)
 
