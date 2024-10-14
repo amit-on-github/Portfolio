@@ -6,7 +6,7 @@ function About() {
       name="About"
       className="max-w-screen-2xl container mx-auto px-6 md:px-20 py-16"
       style={{
-        backgroundImage: "url('./a.jpg')", // Replace with your image URL
+        backgroundImage: "url('./c.jpg')", // Replace with your image URL
         backgroundSize: "cover",
         backgroundPosition: "center",
         backgroundRepeat: "no-repeat",
