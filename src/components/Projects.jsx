@@ -6,6 +6,7 @@ import html from "../../public/html.png";
 import react from "../../public/react.png";
 import javascript from "../../public/javascript.png";
 import css from "../../public/css.jpg";
+import backgroundImage from "../../public/z.jpg";
 
 function Projects() {
   const cardItem = [
