@@ -15,27 +15,26 @@ function Navbar() {
 
   return (
     <>
-      <div className="fixed top-0 left-0 right-0 z-50 bg-opacity-60 bg-gradient-to-r from-blue-500 to-teal-500 backdrop-blur-lg shadow-lg">
+      <div className="fixed top-0 left-0 right-0 z-50 bg-opacity-80 bg-gradient-to-r from-gray-800 via-gray-900 to-black backdrop-blur-lg shadow-lg">
         <div className="max-w-screen-2xl container mx-auto px-4 md:px-20 h-16">
           <div className="flex justify-between items-center h-full">
-            {/* empty div to push items to the right */}
             <div className="flex-grow"></div>
-            
-            {/* desktop navbar */}
+
+            {/* Desktop navbar */}
             <div className="flex items-center space-x-8">
               <ul className="hidden md:flex space-x-8">
                 {navItems.map(({ id, text }) => (
                   <li
-                    className="hover:text-yellow-300 hover:scale-105 transition-transform duration-300 cursor-pointer"
+                    className="hover:text-gray-300 hover:scale-105 transition-transform duration-300 cursor-pointer"
                     key={id}
                   >
                     <Link
                       to={text}
                       smooth={true}
-                      duration={500}
+                      duration={600}
                       offset={-70}
                       activeClass="active"
-                      className="text-white"
+                      className="text-white text-lg font-medium"
                     >
                       {text}
                     </Link>
@@ -45,9 +44,9 @@ function Navbar() {
               <a
                 href="/R.pdf" // Replace with the actual path to your CV file
                 download
-                className="hidden md:block px-4 py-2 bg-yellow-500 text-white rounded-full hover:bg-yellow-600 transition-colors duration=300"
+                className="hidden md:block px-6 py-2 bg-indigo-500 text-white rounded-full hover:bg-indigo-600 transition-colors duration-300"
               >
-                <AiOutlineDownload className="inline-block mr-1" />
+                <AiOutlineDownload className="inline-block mr-2" />
                 Download CV
               </a>
               <div onClick={() => setMenu(!menu)} className="md:hidden text-white">
@@ -56,22 +55,22 @@ function Navbar() {
             </div>
           </div>
         </div>
-        {/* mobile navbar */}
+
+        {/* Mobile navbar */}
         {menu && (
-          <div className="bg-gradient-to-r from-blue-500 to-teal-500 backdrop-blur-lg text-white">
-            <ul className="md:hidden flex flex-col h-screen items-center justify-center space-y-3 text-xl">
+          <div className="bg-gradient-to-r from-gray-800 via-gray-900 to-black backdrop-blur-lg text-white">
+            <ul className="md:hidden flex flex-col h-screen items-center justify-center space-y-6 text-lg">
               {navItems.map(({ id, text }) => (
                 <li
-                  className="hover:text-yellow-300 hover:scale-105 transition-transform duration-300 font-semibold cursor-pointer"
+                  className="hover:text-gray-300 hover:scale-105 transition-transform duration-300 font-semibold cursor-pointer"
                   key={id}
                 >
                   <Link
                     onClick={() => setMenu(!menu)}
                     to={text}
                     smooth={true}
-                    duration={500}
+                    duration={600}
                     offset={-70}
-                    activeClass="active"
                     className="text-white"
                   >
                     {text}
@@ -82,9 +81,9 @@ function Navbar() {
                 <a
                   href="/path-to-your-cv-file.pdf" // Replace with the actual path to your CV file
                   download
-                  className="px-4 py-2 bg-yellow-500 text-white rounded-full hover:bg-yellow-600 transition-colors duration-300"
+                  className="px-6 py-2 bg-indigo-500 text-white rounded-full hover:bg-indigo-600 transition-colors duration-300"
                 >
-                  <AiOutlineDownload className="inline-block mr-1" />
+                  <AiOutlineDownload className="inline-block mr-2" />
                   Download CV
                 </a>
               </li>
