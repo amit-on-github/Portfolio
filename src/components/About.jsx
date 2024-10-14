@@ -6,11 +6,16 @@ function About() {
       name="About"
       className="max-w-screen-2xl container mx-auto px-6 md:px-20 py-16"
       style={{
-        backgroundImage: "url('./public/y.jpg')",
+        backgroundImage: "url('./a.jpg')", // Replace with your image URL
         backgroundSize: "cover",
         backgroundPosition: "center",
         backgroundRepeat: "no-repeat",
-        color: "white",
+        minHeight: "100vh",
+        display: "flex",
+        justifyContent: "center",
+        alignItems: "center",
+        textAlign: "center",
+        color: "#fff",
       }}
     >
       <div className="bg-black bg-opacity-60 p-10 rounded-lg">
