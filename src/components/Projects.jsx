@@ -50,7 +50,19 @@ function Projects() {
     <div
       name="Projects"
       className="max-w-screen-2xl container mx-auto px-4 md:px-20 mt-10"
-    >
+    style={{
+        backgroundImage: "url('./z.jpg')", // Replace with your image URL
+        backgroundSize: "cover",
+        backgroundPosition: "center",
+        backgroundRepeat: "no-repeat",
+        minHeight: "100vh",
+        display: "flex",
+        justifyContent: "center",
+        alignItems: "center",
+        textAlign: "center",
+        color: "#fff",
+      }}
+     >
       <div className="text-center">
         <h1 className="text-4xl font-bold mb-10 text-gray-800">Projects</h1>
         <p className="text-lg text-gray-600 mb-10">
