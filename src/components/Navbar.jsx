@@ -39,7 +39,7 @@ function Navbar() {
               download
               className="flex items-center gap-2 px-5 py-2 bg-indigo-600 text-white rounded-full hover:bg-indigo-700 transition-all duration-300"
             >
-              <AiOutlineDownload size={18} /> Download CV
+              <AiOutlineDownload size={18} /> CV
             </a>
           </li>
         </ul>
