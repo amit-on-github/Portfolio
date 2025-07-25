@@ -1,8 +1,7 @@
 import React, { useState } from "react";
-import { AiOutlineMenu } from "react-icons/ai";
+import { AiOutlineMenu, AiOutlineDownload } from "react-icons/ai";
 import { IoCloseSharp } from "react-icons/io5";
 import { Link } from "react-scroll";
-import { AiOutlineDownload } from "react-icons/ai";
 
 function Navbar() {
   const [menu, setMenu] = useState(false);
@@ -14,84 +13,77 @@ function Navbar() {
   ];
 
   return (
-    <>
-      <div className="fixed top-0 left-0 right-0 z-50 bg-opacity-80 bg-gradient-to-r from-gray-800 via-gray-900 to-black backdrop-blur-lg shadow-lg">
-        <div className="max-w-screen-2xl container mx-auto px-4 md:px-20 h-16">
-          <div className="flex justify-between items-center h-full">
-            <div className="flex-grow"></div>
+    <header className="fixed top-0 left-0 w-full z-50 bg-black/70 backdrop-blur-md shadow-md">
+      <nav className="max-w-7xl mx-auto px-4 md:px-10 lg:px-20 h-16 flex items-center justify-between">
+        {/* Logo */}
+        <div className="text-xl font-bold text-white tracking-wide">MyPortfolio</div>
 
-            {/* Desktop navbar */}
-            <div className="flex items-center space-x-8">
-              <ul className="hidden md:flex space-x-8">
-                {navItems.map(({ id, text }) => (
-                  <li
-                    className="hover:text-gray-300 hover:scale-105 transition-transform duration-300 cursor-pointer"
-                    key={id}
-                  >
-                    <Link
-                      to={text}
-                      smooth={true}
-                      duration={600}
-                      offset={-70}
-                      activeClass="active"
-                      className="text-white text-lg font-medium"
-                    >
-                      {text}
-                    </Link>
-                  </li>
-                ))}
-              </ul>
-              <a
-                href="/R.pdf" // Replace with the actual path to your CV file
-                download
-                className="hidden md:block px-6 py-2 bg-indigo-500 text-white rounded-full hover:bg-indigo-600 transition-colors duration-300"
+        {/* Desktop Nav */}
+        <ul className="hidden md:flex items-center space-x-8">
+          {navItems.map(({ id, text }) => (
+            <li key={id}>
+              <Link
+                to={text}
+                smooth={true}
+                duration={500}
+                offset={-70}
+                className="text-white text-base font-medium hover:text-indigo-400 transition-all duration-300 cursor-pointer"
               >
-                <AiOutlineDownload className="inline-block mr-2" />
-                Download CV
-              </a>
-              <div onClick={() => setMenu(!menu)} className="md:hidden text-white">
-                {menu ? <IoCloseSharp size={24} /> : <AiOutlineMenu size={24} />}
-              </div>
-            </div>
-          </div>
-        </div>
+                {text}
+              </Link>
+            </li>
+          ))}
+          <li>
+            <a
+              href="/R.pdf"
+              download
+              className="flex items-center gap-2 px-5 py-2 bg-indigo-600 text-white rounded-full hover:bg-indigo-700 transition-all duration-300"
+            >
+              <AiOutlineDownload size={18} /> Download CV
+            </a>
+          </li>
+        </ul>
 
-        {/* Mobile navbar */}
-        {menu && (
-          <div className="bg-gradient-to-r from-gray-800 via-gray-900 to-black backdrop-blur-lg text-white">
-            <ul className="md:hidden flex flex-col h-screen items-center justify-center space-y-6 text-lg">
-              {navItems.map(({ id, text }) => (
-                <li
-                  className="hover:text-gray-300 hover:scale-105 transition-transform duration-300 font-semibold cursor-pointer"
-                  key={id}
+        {/* Mobile Toggle Button */}
+        <button
+          onClick={() => setMenu(!menu)}
+          className="md:hidden text-white focus:outline-none"
+        >
+          {menu ? <IoCloseSharp size={26} /> : <AiOutlineMenu size={26} />}
+        </button>
+      </nav>
+
+      {/* Mobile Menu */}
+      {menu && (
+        <div className="md:hidden bg-black/90 backdrop-blur-lg">
+          <ul className="flex flex-col items-center py-10 space-y-6">
+            {navItems.map(({ id, text }) => (
+              <li key={id}>
+                <Link
+                  to={text}
+                  onClick={() => setMenu(false)}
+                  smooth={true}
+                  duration={500}
+                  offset={-70}
+                  className="text-white text-lg font-semibold hover:text-indigo-400"
                 >
-                  <Link
-                    onClick={() => setMenu(!menu)}
-                    to={text}
-                    smooth={true}
-                    duration={600}
-                    offset={-70}
-                    className="text-white"
-                  >
-                    {text}
-                  </Link>
-                </li>
-              ))}
-              <li>
-                <a
-                  href="/path-to-your-cv-file.pdf" // Replace with the actual path to your CV file
-                  download
-                  className="px-6 py-2 bg-indigo-500 text-white rounded-full hover:bg-indigo-600 transition-colors duration-300"
-                >
-                  <AiOutlineDownload className="inline-block mr-2" />
-                  Download CV
-                </a>
+                  {text}
+                </Link>
               </li>
-            </ul>
-          </div>
-        )}
-      </div>
-    </>
+            ))}
+            <li>
+              <a
+                href="/R.pdf"
+                download
+                className="flex items-center gap-2 px-5 py-2 bg-indigo-600 text-white rounded-full hover:bg-indigo-700 transition-all duration-300"
+              >
+                <AiOutlineDownload size={18} /> Download CV
+              </a>
+            </li>
+          </ul>
+        </div>
+      )}
+    </header>
   );
 }
 
